@@ -2,106 +2,173 @@
 
 ## Overview
 
-This project presents an end-to-end **Machine Learning** solution for predicting whether a breast tumor is **benign** or **malignant** using clinical diagnostic features from the **Breast Cancer Wisconsin Dataset**. In addition to building an accurate classification model, the project incorporates **Explainable Artificial Intelligence (XAI)** techniques using **SHAP** and **LIME** to provide transparent and interpretable predictions.
+This project presents an end-to-end **Machine Learning** solution for predicting whether a breast tumor is **benign** or **malignant** using clinical diagnostic features from the **Breast Cancer Wisconsin Dataset**. The project combines supervised machine learning with **Explainable Artificial Intelligence (XAI)** techniques to produce accurate, transparent, and interpretable predictions.
 
-The objective is to demonstrate how machine learning models can support healthcare professionals by delivering accurate predictions while explaining the reasoning behind each prediction.
+A **Random Forest Classifier** was trained to classify tumors, while **SHAP (SHapley Additive Explanations)** and **LIME (Local Interpretable Model-agnostic Explanations)** were used to explain the model's predictions. Model performance was evaluated using multiple classification metrics, including the **ROC Curve** and **ROC-AUC**, to assess its discriminative ability.
+
+This project demonstrates how explainable machine learning can support healthcare professionals by providing both reliable predictions and meaningful insights into the factors influencing each decision.
+
+---
+
+## Project Highlights
+
+- End-to-end supervised Machine Learning pipeline
+- Breast cancer classification using the Breast Cancer Wisconsin Dataset
+- Data preprocessing and exploratory data analysis (EDA)
+- Random Forest Classifier for prediction
+- Model evaluation using multiple performance metrics
+- ROC Curve and ROC-AUC analysis
+- Explainable AI using SHAP and LIME
+- Global and local model interpretation
+- Reproducible workflow implemented in Jupyter Notebook
+
+---
 
 ## Objectives
 
-* Develop a reliable breast cancer classification model.
-* Perform data preprocessing and exploratory data analysis (EDA).
-* Train and evaluate a Random Forest classifier.
-* Interpret model predictions using SHAP and LIME.
-* Demonstrate the importance of Explainable AI in healthcare applications.
+- Develop a robust machine learning model for breast cancer prediction.
+- Perform data preprocessing and exploratory data analysis.
+- Train and evaluate a Random Forest classifier.
+- Interpret model predictions using SHAP and LIME.
+- Improve transparency and trust in AI-based healthcare applications.
+
+---
 
 ## Dataset
 
 **Dataset:** Breast Cancer Wisconsin Dataset
 
-The dataset contains clinical measurements computed from digitized images of breast mass cell nuclei.
+The dataset contains clinical measurements computed from digitized images of fine needle aspirates (FNA) of breast masses.
 
-**Target Classes**
+### Target Classes
 
-* **0** → Benign
-* **1** → Malignant
+| Value | Diagnosis |
+|:-----:|-----------|
+| 0 | Benign |
+| 1 | Malignant |
 
-**Number of Features:** 30
+### Dataset Information
 
-Example features include:
+- **Samples:** 569
+- **Features:** 30 numerical features
+- **Target Variable:** Diagnosis (Benign / Malignant)
 
-* Radius Mean
-* Texture Mean
-* Perimeter Mean
-* Area Mean
-* Smoothness Mean
-* Compactness Mean
-* Concavity Mean
-* Concave Points Mean
-* Symmetry Mean
-* Fractal Dimension Mean
+### Example Features
+
+- Radius Mean
+- Texture Mean
+- Perimeter Mean
+- Area Mean
+- Smoothness Mean
+- Compactness Mean
+- Concavity Mean
+- Concave Points Mean
+- Symmetry Mean
+- Fractal Dimension Mean
+
+---
 
 ## Technologies Used
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* SHAP
-* LIME
-* Joblib
-* Jupyter Notebook
+| Category | Tools & Libraries |
+|----------|-------------------|
+| Programming Language | Python |
+| Data Manipulation | Pandas, NumPy |
+| Data Visualization | Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn |
+| Explainable AI | SHAP, LIME |
+| Model Serialization | Joblib |
+| Development Environment | Jupyter Notebook |
+
+---
 
 ## Machine Learning Workflow
 
 1. Data Loading
 2. Data Exploration
-3. Data Preprocessing
+3. Data Cleaning
 4. Exploratory Data Analysis (EDA)
 5. Feature Engineering
-6. Model Training
-7. Model Evaluation
-8. Prediction
-9. Explainable AI using SHAP
-10. Explainable AI using LIME
+6. Train-Test Split
+7. Model Training
+8. Model Evaluation
+9. Prediction on New Samples
+10. Explainability using SHAP
+11. Explainability using LIME
 
-## Model
+---
 
-**Algorithm**
+## Machine Learning Model
 
-* Random Forest Classifier
+### Algorithm
 
-**Evaluation Metrics**
+- Random Forest Classifier
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Confusion Matrix
-* ROC-AUC (if generated)
+### Evaluation Metrics
+
+The model was evaluated using the following metrics:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- ROC Curve
+- ROC-AUC Score
+
+---
 
 ## Explainable AI (XAI)
 
-### SHAP (SHapley Additive exPlanations)
+### SHAP (SHapley Additive Explanations)
 
-SHAP provides both **global** and **local** explanations by measuring the contribution of each feature to the model's predictions.
+SHAP explains predictions by measuring the contribution of every feature to the model's output. It provides both **global** and **local** explanations, making the model easier to understand.
 
-Implemented visualizations include:
+Implemented SHAP visualizations include:
 
-* Feature Importance Bar Plot
-* Beeswarm Plot
-* Waterfall Plot
+- SHAP Feature Importance Bar Plot
+- SHAP Beeswarm Plot
+- SHAP Waterfall Plot
 
 ### LIME (Local Interpretable Model-agnostic Explanations)
 
-LIME explains individual predictions by approximating the model locally, helping users understand why a specific prediction was made.
+LIME explains individual predictions by approximating the model locally with an interpretable model. This helps users understand why a particular prediction was made for a specific patient.
+
+---
 
 ## Results
 
-The Random Forest classifier successfully classified breast tumors into benign and malignant categories with strong predictive performance.
+The Random Forest classifier successfully classified breast tumors into **benign** and **malignant** categories with excellent predictive performance.
 
-By integrating SHAP and LIME, the project provides transparent explanations that highlight the clinical features influencing each prediction, making the model more trustworthy and suitable for healthcare decision support.
+Model performance was evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- ROC Curve
+- ROC-AUC Score
+
+The integration of **SHAP** and **LIME** provides transparent explanations of the model's decisions by highlighting the clinical features that most influence each prediction. This enhances model interpretability and demonstrates the importance of Explainable AI for trustworthy healthcare applications.
+
+---
+
+## Sample Visualizations
+
+The project includes the following visualizations:
+
+- Exploratory Data Analysis (EDA)
+- Correlation Heatmap
+- Feature Distribution Plots
+- Confusion Matrix
+- ROC Curve
+- SHAP Feature Importance Plot
+- SHAP Beeswarm Plot
+- SHAP Waterfall Plot
+- LIME Local Explanation
+
+---
 
 ## Repository Structure
 
@@ -117,6 +184,8 @@ Breast-Cancer-Prediction-XAI/
 └── LICENSE
 ```
 
+---
+
 ## Installation
 
 Clone the repository:
@@ -131,7 +200,7 @@ Navigate to the project directory:
 cd Breast-Cancer-Prediction-XAI
 ```
 
-Install the required libraries:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -143,25 +212,33 @@ Launch Jupyter Notebook:
 jupyter notebook
 ```
 
-Open the notebook and run all cells.
+Open the notebook and run all cells to reproduce the complete machine learning workflow.
+
+---
 
 ## Future Improvements
 
-* Compare additional machine learning algorithms.
-* Perform hyperparameter optimization.
-* Deploy the model as a web application using Streamlit or Flask.
-* Integrate additional Explainable AI techniques.
-* Extend the project with deep learning models for comparison.
+- Compare additional machine learning algorithms.
+- Perform hyperparameter optimization.
+- Develop a web application using Streamlit or Flask.
+- Integrate additional Explainable AI techniques.
+- Compare traditional machine learning models with deep learning approaches.
+- Deploy the trained model for real-time prediction.
+
+---
 
 ## Author
 
-** Mbuyi Cecile Ngoie**
+**Cecile Mbuyi Ngoie**
 
-M.Sc. Information Technology | AI & Machine Learning Enthusiast
+**M.Sc. Information Technology**  
+**AI | Machine Learning | Explainable AI (XAI)**
 
-GitHub: https://github.com/Cecile07
+**GitHub:** https://github.com/Cecile07
 
-LinkedIn: https://www.linkedin.com/in/cecile-mbuyi-ngoie
+**LinkedIn:** https://www.linkedin.com/in/cecile-mbuyi-ngoie
+
+---
 
 ## License
 
